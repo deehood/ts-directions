@@ -15,18 +15,15 @@ const opposite = (direction: string): string => {
 
 export function dirReduc(arr: string[]): string[] {
     let index = 0;
-    // iter = 0;
 
     while (index < arr.length - 1 && arr.length > 1) {
         index++;
-        // iter = 0;
+
         while (arr[index] === opposite(arr[index - 1])) {
-            // iter++;
             arr.splice(index - 1, 2);
             if (arr.length < 2) return arr;
             if (index > 1) index--;
         }
-        // if (iter > 1 && index > 1) index -= iter - 1;
     }
     return arr;
 }
